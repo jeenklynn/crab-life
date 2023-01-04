@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Crab" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="private" type="int" type-java="int" name="growth" value="0" value-java="0" enable="true"/>
+    </fields>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Crab wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(0)" expression-java="move(0)" enable="true"/>
+                <if condition="Greenfoot.isKeyDown(&quot;up&quot;)" condition-java="Greenfoot.isKeyDown(&quot;up&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="move(2)" expression-java="move(2)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;left&quot;)" condition-java="Greenfoot.isKeyDown(&quot;left&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(-4)" expression-java="turn(-4)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;right&quot;)" condition-java="Greenfoot.isKeyDown(&quot;right&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(4)" expression-java="turn(4)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <call expression="eatLeaf()" expression-java="eatLeaf()" enable="true"/>
+                <call expression="eatStarfish()" expression-java="eatStarfish()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="eatLeaf" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="isTouching(Leaf.class)" condition-java="isTouching(Leaf.class)" enable="true">
+                    <ifStatements>
+                        <call expression="removeTouching(Leaf.class)" expression-java="removeTouching(Leaf.class)" enable="true"/>
+                        <assign dest="growth" dest-java="growth" src="growth+1" src-java="growth + 1" enable="true"/>
+                        <call expression="getWorld().showText(&quot;Growth: &quot;+growth,100,30)" expression-java="getWorld().showText(&quot;Growth: &quot; + growth, 100, 30)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="eatStarfish" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="isTouching(Starfish.class)" condition-java="isTouching(Starfish.class)" enable="true">
+                    <ifStatements>
+                        <call expression="removeTouching(Starfish.class)" expression-java="removeTouching(Starfish.class)" enable="true"/>
+                        <assign dest="growth" dest-java="growth" src="growth+5" src-java="growth + 5" enable="true"/>
+                        <call expression="getWorld().showText(&quot;Growth: &quot;+growth,100,30)" expression-java="getWorld().showText(&quot;Growth: &quot; + growth, 100, 30)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

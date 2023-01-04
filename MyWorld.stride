@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="MyWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class MyWorld.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Crab" type-java="Crab" name="crab" value="new Crab()" value-java=" new Crab()" enable="true"/>
+                <call expression="addObject(crab,17,187)" expression-java="addObject(crab, 17, 187)" enable="true"/>
+                <call expression="crab.setLocation(66,203)" expression-java="crab.setLocation(66, 203)" enable="true"/>
+                <variable type="Leaf" type-java="Leaf" name="leaf" value="new Leaf()" value-java=" new Leaf()" enable="true"/>
+                <call expression="addObject(leaf,233,142)" expression-java="addObject(leaf, 233, 142)" enable="true"/>
+                <variable type="Leaf" type-java="Leaf" name="leaf2" value="new Leaf()" value-java=" new Leaf()" enable="true"/>
+                <call expression="addObject(leaf2,371,306)" expression-java="addObject(leaf2, 371, 306)" enable="true"/>
+                <variable type="Leaf" type-java="Leaf" name="leaf3" value="new Leaf()" value-java=" new Leaf()" enable="true"/>
+                <call expression="addObject(leaf3,474,206)" expression-java="addObject(leaf3, 474, 206)" enable="true"/>
+                <variable type="Starfish" type-java="Starfish" name="starfish" value="new Starfish()" value-java=" new Starfish()" enable="true"/>
+                <call expression="addObject(starfish,397,109)" expression-java="addObject(starfish, 397, 109)" enable="true"/>
+                <variable type="Starfish" type-java="Starfish" name="starfish2" value="new Starfish()" value-java=" new Starfish()" enable="true"/>
+                <call expression="addObject(starfish2,522,341)" expression-java="addObject(starfish2, 522, 341)" enable="true"/>
+                <variable type="Starfish" type-java="Starfish" name="starfish3" value="new Starfish()" value-java=" new Starfish()" enable="true"/>
+                <call expression="addObject(starfish3,112,341)" expression-java="addObject(starfish3, 112, 341)" enable="true"/>
+                <variable type="Leaf" type-java="Leaf" name="leaf4" value="new Leaf()" value-java=" new Leaf()" enable="true"/>
+                <call expression="addObject(leaf4,234,274)" expression-java="addObject(leaf4, 234, 274)" enable="true"/>
+                <variable type="Leaf" type-java="Leaf" name="leaf5" value="new Leaf()" value-java=" new Leaf()" enable="true"/>
+                <call expression="addObject(leaf5,540,63)" expression-java="addObject(leaf5, 540, 63)" enable="true"/>
+                <variable type="Leaf" type-java="Leaf" name="leaf6" value="new Leaf()" value-java=" new Leaf()" enable="true"/>
+                <call expression="addObject(leaf6,117,62)" expression-java="addObject(leaf6, 117, 62)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>
